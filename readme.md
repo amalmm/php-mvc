@@ -152,5 +152,23 @@ routeing
 > Whereas $_GET['q'] will give you:bogus
 
 
-#### parse_url()
+#### info : parse_url()
 > Array ( [path] => /public/index/about [query] => dfsf )
+
+####  info : array destructuring syntax. 
+
+>In PHP, list or [] is a so called "language construct", just like array(). This language construct is used to "pull" variables out of an array. In other words: it will "destructure" the array into separate variables.
+
+```
+$array = [1, 2, 3]; 
+
+// Using the list syntax:
+list($a, $b, $c) = $array;
+
+// Or the shorthand syntax:
+[$a, $b, $c] = $array;
+
+// $a = 1
+// $b = 2
+// $c = 3
+```

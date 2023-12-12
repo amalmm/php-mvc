@@ -6,6 +6,6 @@
     RewriteCond %{REQUEST_FILENAME} !-d
 
     # Redirect all requests to index.php  
-    RewriteRule ^(.*) index.php?url=$1 [L,QSA]
+    RewriteRule ^(.*) index.php  
 
 </IfModule>

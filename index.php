@@ -1,17 +1,31 @@
-<?php 
+<?php
 
-require_once 'vendor/autoload.php'; 
+require_once 'vendor/autoload.php';
+
+use App\Controller\IndexController;
+use App\Controller\AboutController;
 
 // GET url
-
-$url =  $_SERVER['REQUEST_URI'];
+$url = $_SERVER['REQUEST_URI'];
 $url = parse_url($url)['path'];
- 
-$routes = [ "/" => "IndexController",
-            "/about" => "AboutController" ];
 
-if(array_key_exists($url, $routes)){
-	require_once  "src/Controller/" . $routes[$url] . ".php";
-}else{
-	die('404');
+// Define routes
+$routes = [
+    "/"     => [IndexController::class, 'index'],
+    "/about" => [AboutController::class, 'index']
+];
+
+// Check if the route exists
+if (array_key_exists($url, $routes)) {
+    [$controllerClass, $method] = $routes[$url];
+
+    // Check if the controller class and method exist
+    if (class_exists($controllerClass) && method_exists($controllerClass, $method)) {
+        $controller = new $controllerClass();
+        $controller->$method();
+    } else {
+        die('500 Internal Server Error');
+    }
+} else {
+    die('404 Not Found');
 }

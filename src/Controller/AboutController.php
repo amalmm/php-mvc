@@ -4,7 +4,7 @@ namespace App\Controller;
 
 class AboutController {
     public function index() {
-        echo 'Home Page';
+        echo 'about Page';
     }
 
      public function postRequest() {
@@ -12,3 +12,6 @@ class AboutController {
     }
 
 }
+
+
+ 
