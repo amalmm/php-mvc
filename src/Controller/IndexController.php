@@ -2,14 +2,14 @@
 
 namespace App\Controller;
 
+use App\Core\Helper\ViewHelper;
+
 class IndexController {
+  
     public function index() {
-        echo 'Home Page';
+      ViewHelper::render('View/index.php', []);
     }
-
-     public function postRequest() {
-        return '123';
-    }
-
 }
+
+
  

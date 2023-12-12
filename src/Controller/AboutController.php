@@ -2,15 +2,13 @@
 
 namespace App\Controller;
 
+use App\Core\Helper\ViewHelper;
+
 class AboutController {
+  
     public function index() {
-        echo 'about Page';
+      ViewHelper::render('../View/about.php', []);
     }
-
-     public function postRequest() {
-        return '123';
-    }
-
 }
 
 

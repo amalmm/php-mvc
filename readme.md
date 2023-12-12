@@ -172,3 +172,17 @@ list($a, $b, $c) = $array;
 // $b = 2
 // $c = 3
 ```
+
+#### info : php extract
+> The extract function in PHP is used to import variables from an array into the current symbol table
+```
+$data = ['name' => 'John', 'age' => 25, 'city' => 'New York'];
+
+// Extract variables from the $data array
+extract($data);
+
+// Now, you have variables with names based on the array keys
+echo $name; // Output: John
+echo $age;  // Output: 25
+echo $city; // Output: New York
+```
