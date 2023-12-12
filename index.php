@@ -1,19 +1,12 @@
 <?php
 
 require_once 'vendor/autoload.php';
-
-use App\Controller\IndexController;
-use App\Controller\AboutController;
-
+require_once 'routes/web.php';
+ 
 // GET url
 $url = $_SERVER['REQUEST_URI'];
 $url = parse_url($url)['path'];
 
-// Define routes
-$routes = [
-    "/"     => [IndexController::class, 'index'],
-    "/about" => [AboutController::class, 'index']
-];
 
 // Check if the route exists
 if (array_key_exists($url, $routes)) {
