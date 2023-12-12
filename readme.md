@@ -1,3 +1,6 @@
+# v1
+testing php unit test in existing project
+
 ## unit test
 
 #### install composer
@@ -140,3 +143,14 @@ Disallow: /admin/
 </IfModule>
 
 ```
+
+# v2 
+routeing
+
+#### info :  $_Get vs $_server
+> $_SERVER['REQUEST_URI'] will give you " /some-dir/yourpage.php?q=bogus&n=10 "
+> Whereas $_GET['q'] will give you:bogus
+
+
+#### parse_url()
+> Array ( [path] => /public/index/about [query] => dfsf )
