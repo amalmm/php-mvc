@@ -186,3 +186,81 @@ echo $name; // Output: John
 echo $age;  // Output: 25
 echo $city; // Output: New York
 ```
+
+#### config 
+```
+<?php 
+
+define('VIEW_PATH', __DIR__ . '/../src/View/');
+
+```
+
+### unit test | statues code 
+> To perform unit tests for checking the HTTP status codes of web pages in PHP, you can use PHPUnit along with a testing library like Guzzle for making HTTP requests. Here's a basic example:
+
+```
+{
+    "require-dev": {
+        "phpunit/phpunit": "^9",
+        "guzzlehttp/guzzle": "^7"
+    }
+}
+
+```
+> composer update --dev
+
+```
+
+use GuzzleHttp\Client;
+use PHPUnit\Framework\TestCase;
+
+class PageStatusTest extends TestCase
+{
+    protected $client;
+
+    protected function setUp(): void
+    {
+        $this->client = new Client(['base_uri' => 'http://localhost']);
+    }
+
+    public function testHomePageStatus()
+    {
+        $response = $this->client->get('/');
+        $statusCode = $response->getStatusCode();
+        $this->assertEquals(200, $statusCode);
+    }
+```
+
+#### phpunit.xml 
+
+> is a configuration file for PHPUnit, allowing you to customize the behavior of PHPUnit when you run your tests. This file provides a way to specify settings, include bootstrap files, and configure various aspects of test execution.
+```
+<phpunit
+    backupGlobals="false"
+    colors="true"
+    bootstrap="vendor/autoload.php"
+    verbose="true"
+    stopOnFailure="true"
+>
+    <testsuites>
+        <testsuite name="My Test Suite">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
+
+```
+
+#### Understanding Unit Testing
+
+
+Unit testing and mocking are related concepts but address different aspects of the testing process. Let's break down the differences:
+
+Unit Testing:
+
+Definition: Unit testing is the practice of testing individual units or components of a software application in isolation. A unit is the smallest testable part of an 
+
+
+Mocking:
+
+Definition: Mocking is a technique used in unit testing to create simulated objects (mock objects) that mimic the behavior of real objects or components. These mock objects allow you to control the behavior of dependencies during testing.

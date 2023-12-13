@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Tests\\IndexTest::testIndexPageStore":5},"times":{"Tests\\ExampleTest::test_example":0.004,"Tests\\IndexTest::testHomePageStatus":0.25,"Tests\\IndexTest::testIndexPageStore":0.462,"Tests\\IndexTest::teststorefunction":0.001}}
