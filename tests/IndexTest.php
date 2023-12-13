@@ -2,8 +2,8 @@
 
 namespace Tests;
 
-use GuzzleHttp\Client;
 use PHPUnit\Framework\TestCase;
+use GuzzleHttp\Client;
 
 use App\Controller\IndexController;
 
@@ -35,10 +35,10 @@ class IndexTest extends TestCase {
                     'track_redirects' => true,     // Store redirect information in the "history" request option
                 ],
             ] );
+        $body = $response->getBody()->getContents();
 
-         // Assert that the session error exists
-        $this->assertArrayHasKey('error', $_SESSION);
-   
+        // Assert that the session value is not present in the response body
+        $this->assertStringNotContainsString('error', $body);
      }
 
 }

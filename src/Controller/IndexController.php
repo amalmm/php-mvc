@@ -13,7 +13,7 @@ class IndexController {
     public function store() {
             $email = isset( $_GET['email']) ? $_GET['email'] : null ;
             if (empty($email)) {
-                 $_SESSION['error']['bill_fname'] = ["message"=>"name field required"];
+                 $_SESSION['error']['message'] =  "error : message name field required" ;
                 header('Location:/index?error=email requierd ');
                 exit();
               }

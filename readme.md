@@ -264,3 +264,14 @@ Definition: Unit testing is the practice of testing individual units or componen
 Mocking:
 
 Definition: Mocking is a technique used in unit testing to create simulated objects (mock objects) that mimic the behavior of real objects or components. These mock objects allow you to control the behavior of dependencies during testing.
+
+#### GuzzleHttp
+
+> issue session value check : in contner in testing
+```
+ // Get the response body as a string
+        $body = $response->getBody()->getContents();
+
+        // Assert that the session value is not present in the response body
+        $this->assertStringNotContainsString('YourSessionValue', $body);
+```

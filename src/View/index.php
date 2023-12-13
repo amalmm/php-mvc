@@ -6,6 +6,7 @@
 	<title>index</title>
 </head>
 <body>
+	<?php include "alert.php"; ?>
  <h1>index page</h1>
  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
 
