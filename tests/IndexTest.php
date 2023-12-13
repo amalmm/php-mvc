@@ -35,6 +35,9 @@ class IndexTest extends TestCase {
                     'track_redirects' => true,     // Store redirect information in the "history" request option
                 ],
             ] );
+
+         // Assert that the session error exists
+        $this->assertArrayHasKey('error', $_SESSION);
    
      }
 
