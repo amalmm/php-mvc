@@ -13,7 +13,7 @@ class IndexController {
     public function store() {
             $email = isset( $_GET['email']) ? $_GET['email'] : null ;
             if (empty($email)) {
-                header('Location:/index');
+                header('Location:/index?error=email requierd ');
                 exit();
               }
     }

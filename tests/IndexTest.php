@@ -35,13 +35,7 @@ class IndexTest extends TestCase {
                     'track_redirects' => true,     // Store redirect information in the "history" request option
                 ],
             ] );
-      
-         // Access the response body
-         $body = $response->getBody()->getContents();
-         // Access the response status code
-         $status = $response->getStatusCode();
-
-  
+   
      }
 
 }
