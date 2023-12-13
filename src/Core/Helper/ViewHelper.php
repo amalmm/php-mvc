@@ -6,8 +6,9 @@ class ViewHelper
 {
     public static function render($viewFile, $data = [])
     {
+        $filePath = VIEW_PATH . $viewFile;
         extract($data);
-        include  $viewFile;
+        include $filePath;
       }
 }
  
